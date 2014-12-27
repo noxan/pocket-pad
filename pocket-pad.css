@@ -1,1 +1,8 @@
 /* CSS declarations go here */
+.btn-floating.btn-large {
+  width: 55.5px;
+  height: 55.5px;
+}
+.btn-floating.btn-large i {
+  line-height: 55.5px;
+}
