@@ -14,6 +14,14 @@ Router.route('/transactions', function() {
   });
   this.render('transactions');
 });
+Router.route('/categories', function() {
+  this.layout('ApplicationLayout', {
+    data: {
+      title: 'Categories'
+    }
+  });
+  this.render('categories');
+});
 
 
 if (Meteor.isClient) {
@@ -33,6 +41,16 @@ if (Meteor.isClient) {
     },
     formatExpense: function() {
       return accounting.formatMoney(expense);
+    }
+  });
+
+  Template.categories.helpers({
+    categoryList: function() {
+      var categories = [];
+      for(var i=0; i<10; i++) {
+        categories.push({id: i, name: 'Category #' + i});
+      }
+      return categories;
     }
   });
 
