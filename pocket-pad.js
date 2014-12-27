@@ -14,6 +14,19 @@ if (Meteor.isClient) {
     }
   });
 
+  Template.transactions.helpers({
+    formatPrice: function(price) {
+      return accounting.formatMoney(price);
+    },
+    transactionList: function() {
+      var transactions = [];
+      for(var i=0; i<10; i++) {
+        transactions.push({id: i, name: 'Transaction #'+i, price: Math.random() * 20});
+      }
+      return transactions;
+    }
+  });
+
   jQuery(document).ready(function() {
     $(".button-collapse").sideNav();
   });
