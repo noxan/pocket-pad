@@ -1,3 +1,21 @@
+Router.route('/', function() {
+  this.layout('ApplicationLayout', {
+    data: {
+      title: 'PocketPad'
+    }
+  });
+  this.render('overview');
+});
+Router.route('/transactions', function() {
+  this.layout('ApplicationLayout', {
+    data: {
+      title: 'Transactions'
+    }
+  });
+  this.render('transactions');
+});
+
+
 if (Meteor.isClient) {
   var expense = -318.61;
   var income = 419.15;

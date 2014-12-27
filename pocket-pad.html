@@ -5,13 +5,16 @@
 </head>
 
 <body>
+</body>
+
+<template name="ApplicationLayout">
   <nav>
     <div class="nav-wrapper row blue-grey darken-1">
       <div class="col s12">
-        <a href="#" class="brand-logo">PocketPad</a>
+        <a href="#" class="brand-logo">{{title}}</a>
         <ul id="nav-mobile" class="right side-nav">
-          <li><a href="#!overview">Overview</a></li>
-          <li><a href="#!transactions">Transactions</a></li>
+          <li><a href="/">Overview</a></li>
+          <li><a href="/transactions">Transactions</a></li>
           <li><a href="#!categories">Categories</a></li>
         </ul>
         <a class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
@@ -19,8 +22,9 @@
     </div>
   </nav>
 
-  {{> transactions}}
+  {{> yield}}
+
   <div class="container">
     <a class="btn-floating btn-large waves-effect waves-light right blue-grey darken-1"><i class="mdi-content-add"></i></a>
   </div>
-</body>
+</template>
