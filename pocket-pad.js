@@ -16,7 +16,8 @@ if (Meteor.isClient) {
 
   Template.transactions.helpers({
     formatPrice: function(price) {
-      return accounting.formatMoney(price);
+      var textColor = price < 0 ? 'red' : 'green';
+      return new Handlebars.SafeString('<span class="' + textColor + '-text">' + accounting.formatMoney(price) + '</span>');
     },
     transactionList: function() {
       var transactions = [];
