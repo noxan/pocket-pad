@@ -1,30 +1,21 @@
 <template name="transactions">
+<div class="container">
   <div class="row">
-    <div class="col s12 m6">
-      <div class="card">
-        <div class="card-content flow-text">
-          <span class="card-title blue-grey-text">Transactions</span>
-          <table class="hoverable">
-            <thead>
-              <tr>
-                <th data-field="id">Name</th>
-                <th data-field="price">Price</th>
-              </tr>
-            </thead>
-            <tbody>
-              {{#each transactionList}}
-              <tr>
-                <td>{{name}}</td>
-                <td>{{formatPrice price}}</td>
-              </tr>
-              {{/each}}
-            </tbody>
-          </table>
-        </div>
-        <div class="card-action">
-          <a href="#!transactions">All transactions</a>
-        </div>
+    <div class="col s12">
+      <div class="list z-depth-1">
+        {{#each transactionList}}
+        <a class="list-item" href="#!">
+          <div class="list-tile-left">
+            <i class="small mdi-editor-insert-chart"></i>
+          </div>
+          <div class="list-tile-content">
+            {{name}}
+          </div>
+          <div class="list-tile-right">{{formatPrice price}}</div>
+        </a>
+        {{/each}}
       </div>
     </div>
   </div>
+</div>
 </template>

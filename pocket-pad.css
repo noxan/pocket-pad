@@ -6,6 +6,34 @@
   text-align: right;
 }
 
+
+/* list */
+.list {
+  background-color: #ffffff;
+}
+.list .list-item {
+  display: block;
+  height: 48px;
+  line-height: 48px;
+  color: #212121;
+  border-bottom: 1px solid #e5e5e5;
+  box-sizing: border-box;
+  padding-right: 22px;
+}
+.list .list-item .list-tile-left,
+.list .list-item .list-tile-content,
+.list .list-item .list-tile-right {
+  display: inline-block;
+  height: 48px;
+}
+.list .list-item .list-tile-left {
+  float: left;
+  padding: 0 22px;
+}
+.list .list-item .list-tile-right {
+  float: right;
+}
+
 /* materialize css overrides */
 table thead tr th, table tbody tr td {
   text-align: left;
