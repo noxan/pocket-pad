@@ -1,3 +1,4 @@
+// router
 Router.route('/', function() {
   this.layout('ApplicationLayout', {
     data: {
@@ -23,7 +24,10 @@ Router.route('/categories', function() {
   this.render('categories');
 });
 
+// collections
 
+
+// client
 if (Meteor.isClient) {
   var expense = -318.61;
   var income = 419.15;
