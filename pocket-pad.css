@@ -1,4 +1,8 @@
 /* CSS declarations go here */
+html {
+  background-color: #ececec;
+}
+
 .left-text {
   text-align: left;
 }
