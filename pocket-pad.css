@@ -44,6 +44,19 @@ table thead tr th, table tbody tr td {
 }
 
 /* materialize css fixes */
+i {
+  line-height: inherit;
+}
+i.small {
+  font-size: 2rem;
+}
+i.medium {
+  font-size: 4rem;
+}
+i.large {
+  font-size: 6rem;
+}
+
 .btn-floating.btn-large {
   width: 55.5px;
   height: 55.5px;
