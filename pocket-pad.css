@@ -6,6 +6,10 @@
   text-align: right;
 }
 
+/* materialize css overrides */
+table thead tr th, table tbody tr td {
+  text-align: left;
+}
 
 /* materialize css fixes */
 .btn-floating.btn-large {
