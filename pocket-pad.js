@@ -25,6 +25,7 @@ Router.route('/categories', function() {
 });
 
 // collections
+Category = new Mongo.Collection('categories');
 
 
 // client
@@ -50,11 +51,7 @@ if (Meteor.isClient) {
 
   Template.categories.helpers({
     categoryList: function() {
-      var categories = [];
-      for(var i=0; i<10; i++) {
-        categories.push({id: i, name: 'Category #' + i, icon: 'action-label'});
-      }
-      return categories;
+      return Category.find({});
     }
   });
 
