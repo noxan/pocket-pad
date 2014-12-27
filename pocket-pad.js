@@ -20,6 +20,10 @@ if (Meteor.isClient) {
   var expense = -318.61;
   var income = 419.15;
 
+  Template.ApplicationLayout.rendered = function() {
+    jQuery(".button-collapse").sideNav();
+  };
+
   Template.overview.helpers({
     formatBalance: function() {
       return accounting.formatMoney(income + expense);
@@ -44,10 +48,6 @@ if (Meteor.isClient) {
       }
       return transactions;
     }
-  });
-
-  jQuery(document).ready(function() {
-    $(".button-collapse").sideNav();
   });
 }
 
