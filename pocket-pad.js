@@ -14,6 +14,10 @@ if (Meteor.isClient) {
       Session.set("counter", Session.get("counter") + 1);
     }
   });
+
+  jQuery(document).ready(function() {
+    $(".button-collapse").sideNav();
+  });
 }
 
 if (Meteor.isServer) {
