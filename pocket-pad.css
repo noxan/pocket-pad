@@ -37,6 +37,9 @@ html {
 .list .list-item .list-tile-right {
   float: right;
 }
+.list a.list-item:not(.active):hover {
+  background-color: #f2f2f2;
+}
 
 /* materialize css overrides */
 table thead tr th, table tbody tr td {
