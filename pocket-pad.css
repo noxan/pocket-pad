@@ -1,4 +1,13 @@
 /* CSS declarations go here */
+.left-text {
+  text-align: left;
+}
+.right-text {
+  text-align: right;
+}
+
+
+/* materialize css fixes */
 .btn-floating.btn-large {
   width: 55.5px;
   height: 55.5px;
