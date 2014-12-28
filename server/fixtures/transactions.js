@@ -10,6 +10,7 @@ Meteor.startup = function() {
       Transaction.insert({
         name: 'Transaction #'+i,
         category: categoryId,
+        date: new Date(),
         amount: amount
       });
     }
