@@ -41,7 +41,10 @@
             <tbody>
               {{#each transactionsList}}
               <tr>
-                <td>{{name}}</td>
+                <td>
+                  <i class="small mdi-{{category.icon}} left"></i>
+                  <span>{{name}}</span>
+                </td>
                 <td>{{formatMoney amount}}</td>
               </tr>
               {{/each}}

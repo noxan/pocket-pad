@@ -48,7 +48,10 @@ if (Meteor.isClient) {
   Template.overview.helpers({
     formatMoney: formatMoney,
     transactionsList: function() {
-      return Transaction.find({}, {sort: {date: -1}, limit: 5});
+      return Transaction.find({}, {sort: {date: -1}, limit: 5, transform: function(doc) {
+        doc.category = Category.findOne({_id: doc.category});
+        return doc;
+      }});
     },
     categoriesList: function() {
       return Category.find({}, {transform: function(doc) {
