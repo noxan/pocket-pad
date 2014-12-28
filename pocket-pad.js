@@ -63,11 +63,7 @@ if (Meteor.isClient) {
       return new Handlebars.SafeString('<span class="' + textColor + '-text">' + accounting.formatMoney(price) + '</span>');
     },
     transactionList: function() {
-      var transactions = [];
-      for(var i=0; i<10; i++) {
-        transactions.push({id: i, name: 'Transaction #'+i, price: Math.random() * 20});
-      }
-      return transactions;
+      return Transaction.find({});
     }
   });
 }
