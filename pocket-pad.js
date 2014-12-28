@@ -70,7 +70,10 @@ if (Meteor.isClient) {
   Template.transactions.helpers({
     formatMoney: formatMoney,
     transactionList: function() {
-      return Transaction.find({});
+      return Transaction.find({}, {transform: function(doc) {
+        doc.category = Category.findOne({_id: doc.category});
+        return doc;
+      }});
     }
   });
 }
