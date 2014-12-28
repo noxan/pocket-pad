@@ -32,6 +32,15 @@ Router.route('/categories/:id', function() {
   this.render('category');
 });
 
+// materialize forms
+Handlebars.registerHelper('materializeInput', function(value) {
+  console.log(value);
+  if(value) {
+    return 'active';
+  }
+  return '';
+});
+
 // collections
 Category = new Mongo.Collection('categories');
 
@@ -51,6 +60,17 @@ if (Meteor.isClient) {
 
   Template.ApplicationLayout.rendered = function() {
     jQuery(".button-collapse").sideNav();
+
+    var inputSelector = 'input[type=text], input[type=password], input[type=email], textarea';
+
+    $(document).on('focus', inputSelector, function () {
+      $(this).siblings('label, i').addClass('active');
+    });
+    $(document).on('blur', inputSelector, function () {
+      if ($(this).val().length === 0) {
+        $(this).siblings('label, i').removeClass('active');
+      }
+    });
   };
 
   Template.overview.helpers({
@@ -81,6 +101,12 @@ if (Meteor.isClient) {
   Template.categories.helpers({
     categoryList: function() {
       return Category.find({});
+    }
+  });
+
+  Template.category.helpers({
+    category: function() {
+      return Category.findOne({_id: Router.current().params.id});
     }
   });
 

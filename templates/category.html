@@ -1,3 +1,15 @@
 <template name="category">
-  {{name}}
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12 m6">
+            <i class="small mdi-{{category.icon}}"></i>
+        </div>
+        <div class="input-field col s12 m6">
+          <input id="name" type="text" value="{{category.name}}" required>
+          <label for="name" class="{{materializeInput category.name}}">Name</label>
+        </div>
+      </div>
+    </form>
+  </div>
 </template>
