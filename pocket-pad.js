@@ -27,6 +27,8 @@ Router.route('/categories', function() {
 // collections
 Category = new Mongo.Collection('categories');
 
+Transaction = new Mongo.Collection('transactions');
+
 
 // client
 if (Meteor.isClient) {
