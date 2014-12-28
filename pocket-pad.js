@@ -30,6 +30,12 @@ Category = new Mongo.Collection('categories');
 Transaction = new Mongo.Collection('transactions');
 
 
+// generic money format helper with colored text
+var formatMoney = function(money) {
+  var textColor = money < 0 ? 'red' : 'green';
+  return new Handlebars.SafeString('<span class="' + textColor + '-text">' + accounting.formatMoney(money) + '</span>');
+};
+
 // client
 if (Meteor.isClient) {
   var expense = -318.61;
@@ -43,14 +49,15 @@ if (Meteor.isClient) {
     categoriesList: function() {
       return Category.find({});
     },
-    formatBalance: function() {
-      return accounting.formatMoney(income + expense);
+    formatMoney: formatMoney,
+    balance: function() {
+      return income + expense;
     },
-    formatIncome: function() {
-      return accounting.formatMoney(income);
+    income: function() {
+      return income;
     },
-    formatExpense: function() {
-      return accounting.formatMoney(expense);
+    expense: function() {
+      return expense;
     }
   });
 
@@ -61,10 +68,7 @@ if (Meteor.isClient) {
   });
 
   Template.transactions.helpers({
-    formatPrice: function(price) {
-      var textColor = price < 0 ? 'red' : 'green';
-      return new Handlebars.SafeString('<span class="' + textColor + '-text">' + accounting.formatMoney(price) + '</span>');
-    },
+    formatMoney: formatMoney,
     transactionList: function() {
       return Transaction.find({});
     }
