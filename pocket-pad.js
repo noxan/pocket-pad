@@ -49,7 +49,7 @@ if (Meteor.isClient) {
     formatMoney: formatMoney,
     categoriesList: function() {
       return Category.find({}, {transform: function(doc) {
-        doc.amount = 0;
+        doc.amount = -1;
         return doc;
       }});
     },
