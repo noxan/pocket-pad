@@ -47,6 +47,9 @@ if (Meteor.isClient) {
 
   Template.overview.helpers({
     formatMoney: formatMoney,
+    transactionsList: function() {
+      return Transaction.find({}, {sort: {date: -1}, limit: 5});
+    },
     categoriesList: function() {
       return Category.find({}, {transform: function(doc) {
         doc.amount = -1;

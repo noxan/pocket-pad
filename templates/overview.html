@@ -39,18 +39,12 @@
               </tr>
             </thead>
             <tbody>
+              {{#each transactionsList}}
               <tr>
-                <td>Alvin</td>
-                <td>$0.87</td>
+                <td>{{name}}</td>
+                <td>{{formatMoney amount}}</td>
               </tr>
-              <tr>
-                <td>Alan</td>
-                <td>$3.76</td>
-              </tr>
-              <tr>
-                <td>Jonathan</td>
-                <td>$7.00</td>
-              </tr>
+              {{/each}}
             </tbody>
           </table>
         </div>
