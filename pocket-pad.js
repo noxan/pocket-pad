@@ -23,6 +23,14 @@ Router.route('/categories', function() {
   });
   this.render('categories');
 });
+Router.route('/categories/:id', function() {
+  this.layout('ApplicationLayout', {
+    data: {
+      title: 'Category'
+    }
+  });
+  this.render('category');
+});
 
 // collections
 Category = new Mongo.Collection('categories');
