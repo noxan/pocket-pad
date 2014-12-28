@@ -40,6 +40,9 @@ if (Meteor.isClient) {
   };
 
   Template.overview.helpers({
+    categoriesList: function() {
+      return Category.find({});
+    },
     formatBalance: function() {
       return accounting.formatMoney(income + expense);
     },
