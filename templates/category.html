@@ -3,7 +3,13 @@
     <form class="col s12">
       <div class="row">
         <div class="input-field col s12 m6">
-            <i class="small mdi-{{category.icon}}"></i>
+          <label>Icon</label>
+          <select>
+            <option value="action-{{category.icon}}"><i class="small mdi-{{category.icon}}"></i> {{category.icon}}</option>
+            {{#each iconsList}}
+            <option value="action-{{icon.value}}"><i class="small mdi-{{icon.value}}"></i> {{icon.name}}</option>
+            {{/each}}
+          </select>
         </div>
         <div class="input-field col s12 m6">
           <input id="name" type="text" value="{{category.name}}" required>

@@ -96,8 +96,17 @@ if (Meteor.isClient) {
   Template.category.helpers({
     category: function() {
       return Category.findOne({_id: Router.current().params.id});
+    },
+    iconsList: function() {
+      return [
+        {name: 'Alarm', value: 'action-alarm'},
+        {name: 'Balance', value: 'action-account-balance'},
+      ];
     }
   });
+  Template.category.rendered = function() {
+    jQuery('select').material_select();
+  };
 
   Template.transactions.helpers({
     formatMoney: formatMoney,
